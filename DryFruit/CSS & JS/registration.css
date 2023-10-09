@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+:root {
+    --primary-color: rgb(11, 78, 179);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-image: url("background1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+    animation: rotate 6s infinite alternate linear;
+    font-family: "Ubuntu";
+}
+  .first{
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+  }
+  /* Global Stylings */
+  h2{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    color: #fff;
+    text-align: center;
+  }
+  h3{
+    margin: 0 0 30px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: 2px solid #ebebeb;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 0 16px;
+    border-radius: 1.25rem;
+    transition: all 0.375s;
+  }
+  input:hover{
+    border: 2px solid gray;
+  }
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+    color: white;
+  }
+  
+  /* Progressbar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+
+  }
+  
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+  }
+  a{
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: left;
+    text-decoration: none;
+    margin-bottom: 6px;
+    transition: all 0.375s;
+}
+a:hover{
+    color: gray;
+}
+  .progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+  }
+  
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #ffffff;
+  }
+  
+  .progress-step-active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+  
+  /* Form */
+  .form {
+    width: clamp(320px, 30%, 430px);
+    margin: 0 auto;
+    /* border: 2px solid #ccc; */
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    background:linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid gray;
+}
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group {
+    margin: 2rem 0;
+    color: #fff;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button */
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    border-radius: 1.25rem;
+    background-color: #216ce7;
+    color: #f9f9f9;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background: #10449A;
+    color: #f9f9f9;
+  }
+  .nxtbtn{
+    float: center;
+  }
+  
+#password {
+  padding-right: 30px; 
+}
+
+.toggle-password {
+  position: absolute;
+  top: 56%;
+  right: 50px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

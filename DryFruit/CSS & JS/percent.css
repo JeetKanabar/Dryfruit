@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* overflow-y: hidden; */
+  scroll-behavior: smooth;
+}
+
+.container1 {
+  max-width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  display: flex; /* Display circles in a line */
+  justify-content: space-evenly; /* Distribute circles evenly along the line */
+  align-items: center; /* Center items vertically within each container */
+}
+
+.circle_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle_percent {
+  font-size: 150px; /* Adjust the font size to make the circles smaller */
+  width: 1em;
+  height: 1em;
+  position: relative;
+  background: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.circle_inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  clip: rect(0 1em 1em 0.5em);
+}
+
+.round_per {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: #6faaff;
+  clip: rect(0 1em 1em 0.5em);
+  transform: rotate(180deg);
+  transition: 1.05s;
+}
+
+.percent_more .circle_inner {
+  clip: rect(0 0.5em 1em 0em);
+}
+
+.percent_more:after {
+  position: absolute;
+  left: 0.5em;
+  top: 0em;
+  right: 0;
+  bottom: 0;
+  background: #6faaff;
+  content: '';
+}
+
+.circle_inbox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #fff;
+  z-index: 3;
+  border-radius: 50%;
+}
+
+.percent_text {
+  position: absolute;
+  font-size: 36px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  position: relative;
+}
+h4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    font-family: 'Courier New', monospace;
+}
